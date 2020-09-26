@@ -6,7 +6,7 @@ body{
 }
 .container{
 	padding-top: 3rem;
-	background-color: white;
+	background-color: #D0DCDC;
 }
 .botonConf{
 	width: 80px !important;
@@ -14,10 +14,17 @@ body{
 	font-size: 120% !important;
 	background-color: #d35060;
 }
+.fondoGris{
+	background-color: #D0DCDC !important;
+}
+
 
 .container.TemaRetro{
 	padding-top: 3rem;
-	background-color: #00689d;
+	background-color: transparent;
+	background-image: url(FondoRetro.jpg);
+	width: auto;
+	height: auto;
 	font-family: 'Press Start 2P', cursive;
 	font-size: 60% !important;
 	color: white;
@@ -27,7 +34,7 @@ body{
 
 .container.TemaDark{
 	padding-top: 3rem;
-	background-color: black;
+	background-color: #2D3A3A;
 	font-family: 'Acme', sans-serif;
 	color: cyan;
 }

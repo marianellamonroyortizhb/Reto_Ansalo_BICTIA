@@ -14,11 +14,6 @@ let BufferNumeros = [];
 //Funciones por letra
 
 
-
-
-
-
-
 // *** Selector del Tema ***
 const SwitchRetro = document.getElementById('SwitchRetro');
 const SwitchDark = document.getElementById('SwitchDark');
@@ -26,43 +21,45 @@ const container = document.getElementById('container');
 
 function TemaRetro() {
 	if (SwitchRetro.checked) {
-		localStorage.setItem('tema', 'SwitchRetro');
+		localStorage.setItem('TemaActual', 'SwitchRetro');
 		container.classList.toggle('TemaRetro');
 		SwitchDark.checked = false;
-
-	} else {
-		container.classList.remove('TemaRetro');
-		container.classList.toggle('fondoCaja');
-		container.className = 'container';
-		localStorage.setItem('tema', 'container');
 	}
 
+	else {
+		container.classList.remove('TemaRetro');
+		container.className = 'container';
+		localStorage.setItem('TemaActual', 'container');
+	}
 }
 
 function TemaDark() {
 	if (SwitchDark.checked) {
-		localStorage.setItem('tema', 'SwitchDark');
+		localStorage.setItem('TemaActual', 'SwitchDark');
 		container.classList.toggle('TemaDark');
 		SwitchRetro.checked = false;
-	} else {
+	}
+
+	else {
 		container.classList.remove('TemaDark');
 		container.className = 'container';
-		localStorage.setItem('tema', 'container');
+		localStorage.setItem('TemaActual', 'container');
 	}
 }
 
-const temaEnStorage = () => {
-
-	const temaGuardado = localStorage.getItem('tema')
-	if (temaGuardado == 'SwitchRetro') {
-		SwitchRetro.checked = true;
+const AlmacenaTema = () => {
+	const TemaSelec = localStorage.getItem('TemaActual')
+	if (TemaSelec == 'SwitchRetro') {
 		container.classList.toggle('TemaRetro');
-	} else if (temaGuardado == 'SwitchDark') {
+		SwitchRetro.checked = true;
+	}
+	else if(TemaSelec == 'SwitchDark') {
 	SwitchDark.checked = true;
 	container.classList.toggle('TemaDark');
-
 	}
-	localStorage.clear()
+	else
+	{
+	localStorage.clear();
+	}
 }
-
-temaEnStorage()
+AlmacenaTema()
